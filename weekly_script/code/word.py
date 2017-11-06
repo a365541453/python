@@ -74,6 +74,7 @@ fix_table(doc,1,1,2,inspect_end_time,cell_style)
 
 ########################修改工单统计表格##################################
 event_tol = get_from_xlsx.event
+
 cell_style = {'bold':False,'size':Pt(10.5),'name':'宋体'}
 
 number = 1
@@ -82,9 +83,10 @@ rows = 1
 for event in event_tol:
 	table_add_rows(doc,4)
 	fix_table(doc,4,rows,0,str(number),cell_style)
-	fix_table(doc,4,rows,1,event_tol[event][0].split('/')[0],cell_style)
-	fix_table(doc,4,rows,2,event_tol[event][1],cell_style)
-	fix_table(doc,4,rows,3,'已完成',cell_style)
+	fix_table(doc,4,rows,1,event,cell_style)
+	fix_table(doc,4,rows,2,event_tol[event][0].split('/')[0],cell_style)#类别
+	fix_table(doc,4,rows,3,event_tol[event][1],cell_style)
+	fix_table(doc,4,rows,4,'已完成',cell_style)
 	rows = rows + 1
 	number = number + 1
 

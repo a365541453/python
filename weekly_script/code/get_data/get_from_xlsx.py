@@ -17,11 +17,29 @@ for sheet in xlsx_weekly.sheets():#遍历xlsx中每一个sheet
 	#返回的是一周之内的工单dict
 	event.update(a)
 
+
+
 #########################从RVTool中获取存储信息###################################
 target_path = 'C:\\Users\\Administrator\\Desktop\\'
 target_filename = 'RVTools_export_all'
 
 filename = find_filename(target_path,target_filename)
+
+################################################################################
+#xlsx_weekly = xlrd.open_workbook('C:\\Users\\Administrator\Desktop\\工作记录.xlsx')
+#
+#end_time = datetime.datetime.now() + datetime.timedelta(days=-1)#结束的那一天
+#began_time = end_time + datetime.timedelta(days=-7)#开始的那一天
+#
+#event_time = {}
+#for sheet in xlsx_weekly.sheets():#遍历xlsx中每一个sheet
+#	a = between_seven_event(sheet,began_time,end_time)
+#	#返回的是一周之内的工单dict
+#	event_time.update(a)
+
+
+
+
 
 ############################################################
 #excel = win32.gencache.EnsureDispatch('Excel.Application')# 因为RVTool导出来的xls格式
