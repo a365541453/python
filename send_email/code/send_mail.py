@@ -5,9 +5,10 @@ from email.mime.multipart import MIMEMultipart
 from email.utils import formataddr
 from email.mime.application import MIMEApplication
 
-sys.path.append(r'F:\github\weekly_script\code')
+sys.path.append(r'F:\github\python\weekly_script\code')
 from word import weekly_filename
 
+#weekly_filename = 'C:\\Users\\Administrator\\Desktop\\周报20171120.docx'
 
 server_ip = 'smtp.qq.com'
 username = '365541453'
