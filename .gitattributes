@@ -1,0 +1,4 @@
+*.html linguist-language = python
+*.js linguist-language = python
+*.php linguist-language = python
+*.asp linguist-language = python
