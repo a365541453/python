@@ -45,7 +45,7 @@ for file in get_html.html_file_list:  # 遍历html文件列表
 
     ###################################写入数据文件######################################
     db_file = 'C:\\Users\\Administrator\\Desktop\\db.sqlite3'
-    #db = sqlite3.connect(db_file)
+    db = sqlite3.connect(db_file)
     db_tables = 'linux_part_linux_article'
 
     ###插入数据
@@ -53,9 +53,7 @@ for file in get_html.html_file_list:  # 遍历html文件列表
     type = 5
     time = '2017-11-24'
     text = '222222222'
-    sql = 'INSERT INTO %s (title,type,time,text) VALUES (%s,%s,%s,%s)'%(db_tables, title, type, time, text)
-    print(sql)
-    exit()
+    sql = 'INSERT INTO ? (title,type,time,text) VALUES (?,?,?,?)',[(db_tables, title, type, time, text)]
 
     db.execute(sql)
     db.commit()
