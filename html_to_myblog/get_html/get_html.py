@@ -22,9 +22,9 @@ for i in range(0,len(list)):
         html_dir_list.append(path)
 
 
-#for dir in html_dir_list:
-#    new_dir = r'F:\github\django\django\blog\static\upload\kindeditor'
-#    shutil.move(dir,new_dir)
+for dir in html_dir_list:
+    new_dir = r'F:\github\django\django\blog\static\upload\kindeditor'
+    shutil.move(dir,new_dir)
 
 
 html_file_list = html_file

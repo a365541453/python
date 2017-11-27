@@ -38,27 +38,30 @@ for file in get_html.html_file_list:  # 遍历html文件列表
 
     str_html_copy = re.search(r'<body>(.|\n)*</body>',str_html_copy).group()
     #寻找body之间的部分
+    a_tag = re.search(r'<a name=(.*)/>',str_html_copy).group()
+    h1_tag = re.search(r'<h1>(.*)</h1>',str_html_copy).group()
 
     str_html_copy = str_html_copy.replace(r'<body>','')
     str_html_copy = str_html_copy.replace(r'</body>', '')
+    str_html_copy = str_html_copy.replace(a_tag,'')
+    str_html_copy = str_html_copy.replace(r'</a>', '')
+    str_html_copy = str_html_copy.replace(h1_tag, '')
     #删除body头
 
     ###################################写入数据文件######################################
     db_file = 'C:\\Users\\Administrator\\Desktop\\db.sqlite3'
     db = sqlite3.connect(db_file)
-    db_tables = 'linux_part_linux_article'
+    #db_tables = 'linux_part_linux_article'
 
     ###插入数据
     title = file.split('/')[2].split('.')[0]
-    type = 5
-    time = '2017-11-24'
-    text = '222222222'
-    sql = 'INSERT INTO ? (title,type,time,text) VALUES (?,?,?,?)',[(db_tables, title, type, time, text)]
+    type = 7
+    time = '2017-11-27'
+    text = str_html_copy
+    #db.execute(sql)
 
-    db.execute(sql)
+    db.execute('INSERT INTO database_part_database_article (title,type,time,text) VALUES (?,?,?,?)',(title, type, time, text))
     db.commit()
     db.close()
-
-
 
 
