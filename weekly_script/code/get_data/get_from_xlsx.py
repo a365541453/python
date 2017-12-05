@@ -2,9 +2,6 @@ import xlrd
 from def_files.xlsx_def import *
 import datetime
 
-
-
-
 ##############################从工作记录中获取工单#############################
 xlsx_weekly = xlrd.open_workbook('C:\\Users\\Administrator\Desktop\\工作记录.xlsx')
 

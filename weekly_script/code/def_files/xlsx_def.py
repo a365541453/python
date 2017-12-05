@@ -6,6 +6,7 @@ import re
 def between_seven_event(sheet, began_time, end_time):
     began_time_stamp = began_time.timestamp()
     end_time_stamp = end_time.timestamp()
+
     event_dict = {}
     for x in range(0, sheet.nrows):
         time_numerical = sheet.cell_value(x, 0)
