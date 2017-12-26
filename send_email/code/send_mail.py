@@ -11,10 +11,10 @@ from word import weekly_filename
 #weekly_filename = 'C:\\Users\\Administrator\\Desktop\\周报20171120.docx'
 
 server_ip = 'smtp.qq.com'
-username = '365541453'
-password = 'zakhtmxvhbgabhja'
-from_addr ='365541453@qq.com'
-to_addr = '542688006@qq.com'
+username = 'XXXXX'
+password = 'XXXXX'
+from_addr ='XXXX@qXX.XX'
+to_addr = 'XXXX@qXX.XX'
 #to_addr = '365541453@qq.com'
 
 target_path = 'C:\\Users\\Administrator\\Desktop\\'
@@ -25,8 +25,8 @@ filename = weekly_filename
 file = open(filename,'rb').read()
 
 msg = MIMEMultipart()
-msg['From'] = formataddr(['周王焊',from_addr])
-msg['To']  = formataddr(['李斌东',to_addr])
+msg['From'] = formataddr(['XXX',from_addr])
+msg['To']  = formataddr(['XXX',to_addr])
 msg['Subject'] = '周报'  #邮件的主题
 
 enclosure = MIMEApplication(file)
